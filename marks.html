@@ -1,0 +1,38 @@
+<h1>Enter Marks out of 100</h1>
+<input type="text" id="english" placeholder="English Marks" autofocus>
+<br />
+<input type="text" id="maths" placeholder="Maths Marks">
+<br />
+<input type="text" id="physics" placeholder="Physics Marks">
+<br />
+<input type="text" id="chemistry" placeholder="Chemistry Marks">
+<br />
+<input type="text" id="biology" placeholder="Biology Marks">
+<hr />
+<button onclick="marking()"> Check </button>
+<div id="total"></div>
+<div id="percentage"></div>
+<div id="pass"></div>
+<script>
+    function marking() {
+        var english = parseInt(document.getElementById("english").value);
+        var maths = parseInt(document.getElementById("maths").value);
+        var physics = parseInt(document.getElementById("physics").value);
+        var chemistry = parseInt(document.getElementById("chemistry").value);
+        var biology = parseInt(document.getElementById("biology").value);
+        var total = english + maths + physics + chemistry + biology;
+        var percentage = (total / 500) * 100;
+        var check = true;
+        if(percentage < 35) {
+            check = false;
+        };
+        document.getElementById("total").innerHTML = `Total Marks = ${total}/500`;
+        document.getElementById("percentage").innerHTML = `Percentage = ${percentage}%`;
+        if(check) {
+            document.getElementById("pass").innerHTML = `Grade : Passed`;
+        }
+        else{
+            document.getElementById("pass").innerHTML = `Grade : Failed`;
+        };
+    }
+</script>
