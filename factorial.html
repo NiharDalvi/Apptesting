@@ -1,0 +1,18 @@
+<h2>Enter Number below</h2>
+<br>
+<input type="text" placeholder="Enter number" autofocus id="num">
+<button onclick="factorial()"> Find Factorial </button>
+<hr>
+<div id="result"></div>
+
+<script>
+    function factorial() {
+        var num = parseInt(document.getElementById("num").value);
+        var f = 1;
+        for(num ; num >= 1 ; num--) {
+            f = f*num;
+        };
+
+        document.getElementById("result").innerHTML = `factorial is :`+ f
+    };
+</script>
